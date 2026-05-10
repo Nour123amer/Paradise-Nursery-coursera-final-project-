@@ -5,3 +5,5 @@ React Router Dom
 React Hooks
 Shadcn
 Daisy UI 
+
+using pnpm for development & pnpm build to build locally.
