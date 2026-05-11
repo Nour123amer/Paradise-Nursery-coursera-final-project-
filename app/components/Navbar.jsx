@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 export default function Navbar() {
   const router = useNavigate();
   const [open, setOpen] = useState(false);
-    const count = useSelector((state) => state.counter.count);
+  const count = useSelector((state) => state.counter.count);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-green-500/90 backdrop-blur-md border-b ">
@@ -28,24 +28,30 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-6">
-         
+
+          <Link
+            href="/about"
+            className="text-white hover:text-black font-medium transition"
+          >
+            About
+          </Link>
             <Link
-              href="/about"
-              className="text-white hover:text-black font-medium transition"
-            >
-              About
-            </Link>
-             <Link
-              href="/cart"
-              className="text-white hover:text-black font-medium transition relative"
-            >
-                <ShoppingCart />
-              <span className="absolute -top-3 -right-2">{count}</span>
-            </Link>
+                    href="/products"
+                    className="text-white hover:text-black font-medium transition"
+                  >
+                    Products
+                  </Link>
+          <Link
+            href="/cart"
+            className="text-white hover:text-black font-medium transition relative"
+          >
+            <ShoppingCart />
+            <span className="absolute -top-3 -right-2">{count}</span>
+          </Link>
 
         </nav>
 
-    
+
         {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
@@ -70,22 +76,30 @@ export default function Navbar() {
 
                 {/* Links */}
                 <div className="flex flex-col gap-6 text-lg">
-                   <Link
-              href="/about"
-              className="text-white hover:text-black font-medium transition"
-            >
-              About
-            </Link>
-             <Link
-              href="/cart"
-              className="text-white hover:text-black font-medium transition relative"
-            >
-                <ShoppingCart />
-              <span className="absolute -top-3 -right-2">{count}</span>
-            </Link>
+                  <Link
+                    href="/about"
+                    className="text-white hover:text-black font-medium transition"
+                  >
+                    About
+                  </Link>
+
+                  <Link
+                    href="/products"
+                    className="text-white hover:text-black font-medium transition"
+                  >
+                    Products
+                  </Link>
+
+                  <Link
+                    href="/cart"
+                    className="text-white hover:text-black font-medium transition relative"
+                  >
+                    <ShoppingCart />
+                    <span className="absolute -top-3 -right-2">{count}</span>
+                  </Link>
                 </div>
 
-                
+
               </div>
 
             </SheetContent>

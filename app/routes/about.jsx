@@ -1,121 +1,89 @@
-import { Card } from "~/components/ui/card"
-import { Provider, useDispatch, useSelector } from "react-redux";
-import { store } from "../store";
-import { Button } from "~/components/ui/button";
-import { increment, decrement } from "../plants/plantSlice";
-import Navbar from "../components/Navbar";
-import { useState } from "react";
-import { useEffect } from "react";
+import React from 'react'
+import { Leaf, ShoppingCart, Sprout } from "lucide-react";
+import Navbar from '../components/Navbar';
+
 
 export default function About() {
-    const plants = [
-        {
-            id: 1,
-            name: "Ficus",
-            description: "The Ficus is a popular houseplant known for its glossy leaves",
-            url: "/plant1.webp",
-            price: "$20",
-            count: 0
-        },
-        {
-            id: 2,
-            name: "Monstera",
-            description: "The Monstera is a tropical plant with large, distinctive leaves",
-            url: "/plant2.avif",
-            price: "$25",
-            count: 0
-        },
-        {
-            id: 3,
-            name: "Snake Plant",
-            description: "The Snake Plant is a hardy plant that can tolerate low light and infrequent watering",
-            url: "/plant3.jpg",
-            price: "$15",
-            count: 0
-        },
-        {
-            id: 4,
-            name: "Pothos",
-            description: "The Pothos is a trailing plant that is easy to care for and can thrive in a variety of conditions",
-            url: "/plant4.jpg",
-            price: "$10",
-            count: 0
-        },
-        {
-            id: 5,
-            name: "Spider Plant",
-            description: "The Spider Plant is a popular houseplant that is known for its air-purifying properties",
-            url: "/plant5.jpg",
-            price: "$12",
-            count: 0
-        },
-        {
-            id: 6,
-            name: "Succulent",
-            description: "Succulents are a diverse group of plants that store water in their leaves, making them drought-tolerant and easy to care for",
-            url: "/plant6.avif",
-            price: "$8",
-            count: 0
-        }
-    ]
-    const cartCount = useSelector((state) => state.counter.count);
-    const dispatch = useDispatch();
-    const [flowers, setFlowers] = useState(plants);
-    const [cartItems, setCartItems] = useState([]);
+  return (
+   <>
+   <Navbar />
+    <div className="min-h-screen bg-green-50 py-16 px-6 mt-12">
+      {/* Hero Section */}
+      <section className="max-w-5xl mx-auto text-center mb-20">
+        <h1 className="text-5xl font-bold text-green-800 mb-6">
+          About Paradise Nursery
+        </h1>
 
-    const handleEachIncrement = (id) => {
+        <p className="text-lg text-gray-700 leading-8 max-w-3xl mx-auto">
+          Paradise Nursery is an online plant shopping experience designed for
+          plant lovers. Our goal is to make beautiful and healthy plants
+          accessible to everyone while creating a simple and enjoyable shopping
+          experience.
+        </p>
+      </section>
 
-        setFlowers(prevFlowers => prevFlowers.map(p => p.id === id ? { ...p, count: p.count + 1 } : p));
-        setCartItems(prevCartItems => [...prevCartItems, flowers.find(p => p.id === id)]);
-        dispatch(increment());
-    }
+      {/* Features Section */}
+      <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition duration-300">
+          <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+            <Leaf className="text-green-700 w-8 h-8" />
+          </div>
 
-    const handleEachDecrement = (id) => {
-        setFlowers(prevFlowers => prevFlowers.map(p => p.id === id ? { ...p, count: p.count - 1 } : p));
-        dispatch(decrement());
+          <h2 className="text-2xl font-semibold mb-4 text-green-800">
+            Fresh Plants
+          </h2>
 
-    }
+          <p className="text-gray-600 leading-7">
+            Discover a variety of fresh indoor and outdoor plants carefully
+            selected to brighten your home and workspace.
+          </p>
+        </div>
 
-    useEffect(() => {
-        localStorage.setItem("plants", JSON.stringify(flowers));
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-    }, [flowers]);
+        <div className="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition duration-300">
+          <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+            <ShoppingCart className="text-green-700 w-8 h-8" />
+          </div>
 
+          <h2 className="text-2xl font-semibold mb-4 text-green-800">
+            Easy Shopping
+          </h2>
 
-    return (
-        <>
-            <Provider store={store}>
+          <p className="text-gray-600 leading-7">
+            Browse categories, add items to your cart, and manage quantities
+            with a smooth and user-friendly shopping experience.
+          </p>
+        </div>
 
-                <Navbar />
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 max-w-300 mx-auto my-18">
-                    {flowers.map((plant, index) => {
-                        return (
-                            <Card key={index} className="m-4 ">
+        <div className="bg-white rounded-3xl shadow-lg p-8 text-center hover:scale-105 transition duration-300">
+          <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+            <Sprout className="text-green-700 w-8 h-8" />
+          </div>
 
-                                <img src={plant.url} alt={plant.name} className="w-full h-64 object-cover" />
-                                <h2 className=" px-4 text-xl font-bold mt-4">{plant.name}</h2>
-                                <div className="flex items-center justify-center gap-5">
-                                    <Button
-                                        onClick={() => { handleEachIncrement(plant.id) }}
-                                    >+</Button>
-                                    <p>{plant.count}</p>
-                                    <Button
-                                        onClick={() => { handleEachDecrement(plant.id) }}
-                                    >-</Button>
-                                </div>
+          <h2 className="text-2xl font-semibold mb-4 text-green-800">
+            Plant Care
+          </h2>
 
+          <p className="text-gray-600 leading-7">
+            We believe plants improve everyday life by creating healthier,
+            calmer, and more beautiful environments.
+          </p>
+        </div>
+      </section>
 
+      {/* Mission Section */}
+      <section className="max-w-5xl mx-auto bg-white rounded-3xl shadow-lg p-10 text-center">
+        <h2 className="text-4xl font-bold text-green-800 mb-6">
+          Our Mission
+        </h2>
 
-                                <p className=" px-4 text-gray-600 mt-2">{plant.description}</p>
-                                <p className=" px-4 text-green-600 font-bold mt-2">{plant.price}</p>
-                            </Card>
-                        )
-
-                    })}
-
-                </div>
-
-            </Provider>
-        </>
-    )
+        <p className="text-gray-700 text-lg leading-8">
+          Our mission is to connect people with nature through affordable,
+          high-quality plants and a modern digital shopping experience. Paradise
+          Nursery combines technology and greenery to make plant shopping easier
+          and more enjoyable for everyone.
+        </p>
+      </section>
+    </div>
+   </>
+  )
 }
