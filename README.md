@@ -1,87 +1,60 @@
-# Welcome to React Router!
+Paradise Nursery
 
-A modern, production-ready template for building full-stack React applications using React Router.
+An online plant shopping application built with React and Redux Tool Kit,
+React Router Dom
+React Hooks
+Shadcn
+Daisy UI 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+using pnpm for development & pnpm build to build locally.
 
-## Features
+ Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Browse house plants
+- Add plants to shopping cart
+- Increase and decrease item quantity
+- Remove items from cart
+- Dynamic cart count
+- Responsive UI
+- State management using Redux Toolkit
+- Persistent cart data using Local Storage
 
-## Getting Started
 
-### Installation
+## Tech Stack
 
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- React
+- Redux Toolkit
+- React Router
+- React Hooks
+- Tailwind CSS
+- shadcn/ui
+- DaisyUI
 
 ---
+ Installation
 
-Built with ❤️ using React Router.
+Clone the repository:
+
+git clone https://github.com/Nour123amer/Paradise-Nursery-coursera-final-project-.git
+
+
+Install dependencies:
+pnpm install
+
+Run the development server:
+pnpm dev
+
+
+Build the project locally:
+pnpm build
+
+
+ Project Structure
+
+app/
+ ├── routes/home.jsx - about.jsx - products.jsx - cart.jsx
+ ├── components/
+ ├── plants/ plantSlice.js
+ ├── store.js
+
+
