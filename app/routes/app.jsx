@@ -1,24 +1,23 @@
-import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
 import { Button } from "~/components/ui/button";
 import { useNavigate } from "react-router";
 
 
-export function meta({ }: Route.MetaArgs) {
+export function meta({ }) {
   return [
     { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
-export default function Home() {
+export default function App() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="home-bg h-screen flex items-center justify-center">
+      <div className="background-image h-screen flex items-center justify-center">
         <div className=" p-14 font-bold text-white max-w-[1100px] mx-auto my-14 flex justify-between items-center">
           <div className="w-1/3">
-            <h2 className="mb-4">Paradise Nursery</h2>
+            <h1 className="mb-4">Paradise Nursery</h1>
             <Button onClick={()=>{navigate("/about")}} className="bg-white text-green-600 w-[150px] cursor-pointer">
               Get Started</Button>
 

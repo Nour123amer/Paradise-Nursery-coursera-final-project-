@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import plantseRducer from './plants/plantSlice'
-
+import plantseRducer from './plants/CartSlice'
 export const store = configureStore({
   reducer: {
     counter: plantseRducer,

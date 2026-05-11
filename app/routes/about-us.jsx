@@ -3,11 +3,11 @@ import { Leaf, ShoppingCart, Sprout } from "lucide-react";
 import Navbar from '../components/Navbar';
 
 
-export default function About() {
+export default function AboutUs() {
   return (
    <>
    <Navbar />
-    <div className="min-h-screen bg-green-50 py-16 px-6 mt-12">
+    <div className="min-h-screen bg-green-50 py-16 px-6 mt-12 about-us-container">
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto text-center mb-20">
         <h1 className="text-5xl font-bold text-green-800 mb-6">
