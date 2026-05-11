@@ -15,8 +15,8 @@ export default function Home() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="h-screen flex items-center justify-center">
-        <div className="home-bg p-14 font-bold text-white max-w-[1100px] mx-auto my-14 flex justify-between items-center">
+      <div className="home-bg h-screen flex items-center justify-center">
+        <div className=" p-14 font-bold text-white max-w-[1100px] mx-auto my-14 flex justify-between items-center">
           <div className="w-1/3">
             <h2 className="mb-4">Paradise Nursery</h2>
             <Button onClick={()=>{navigate("/about")}} className="bg-white text-green-600 w-[150px] cursor-pointer">

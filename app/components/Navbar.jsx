@@ -23,7 +23,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <h1 className="text-xl font-bold text-white">
-          Paradise Nursery
+         <Link href="/">Paradise Nursery</Link>
         </h1>
 
         {/* Desktop Menu */}

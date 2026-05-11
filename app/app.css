@@ -143,7 +143,7 @@ body {
   }
 }
 
-
+ /* background for home page */
 .home-bg{
   background-image: url("/plant2.avif");
   background-size: cover;
